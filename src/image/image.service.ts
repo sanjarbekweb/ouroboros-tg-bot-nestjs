@@ -6,12 +6,9 @@ import { InferenceClient } from '@huggingface/inference';
 export class ImageService {
   private readonly client: InferenceClient;
 
-  private readonly model =
-    'stabilityai/stable-diffusion-xl-base-1.0';
+  private readonly model = 'stabilityai/stable-diffusion-xl-base-1.0';
 
-  constructor(
-    private readonly config: ConfigService,
-  ) {
+  constructor(private readonly config: ConfigService) {
     this.client = new InferenceClient(
       this.config.getOrThrow<string>('HF_TOKEN'),
     );

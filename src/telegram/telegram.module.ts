@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TelegrafModule } from 'nestjs-telegraf';
+import { FileModule } from 'src/file/file.module';
 
 import { ChatModule } from '../chat/chat.module';
 import { ImageModule } from '../image/image.module';
@@ -21,10 +22,9 @@ import { TelegramUpdate } from './telegram.update';
 
     ImageModule,
     ChatModule,
+    FileModule,
   ],
 
-  providers: [
-    TelegramUpdate,
-  ],
+  providers: [TelegramUpdate],
 })
-export class TelegramModule { }
+export class TelegramModule {}

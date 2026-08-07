@@ -19,10 +19,7 @@ export class ChatService {
     });
   }
 
-  async chat(
-    turns: any[],
-    userContext?: string,
-  ): Promise<string> {
+  async chat(turns: any[], userContext?: string): Promise<string> {
     const response = await this.ai.models.generateContent({
       model: this.model,
       contents: turns,
